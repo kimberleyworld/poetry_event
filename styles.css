@@ -1,19 +1,173 @@
-body {
-    background-color: lightpink;
-    padding: 80px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.mb-1{
+  margin-bottom: 20px;
 }
+.mb-2{
+  margin-bottom: 40px;
+}
+.mb-3{
+  margin-bottom: 70px;
+}
+body {
+   display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  height: 100vh; /* Full screen height */
+    background-color: lightpink;
+    padding: 50px;}
 h1 {
       font-family: "Kings", cursive;
 }
-h2, h1, h3 {
+h2, h1 {
     margin: 0px;
 }
+h3 {
+  margin: 5px;
+}
 
-#eventFrame {
+hr {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    border: none;
+    margin: 0px 0;
+}
+
+#info {
+  font-family: "Kings", cursive;
+}
+.event-container ,.info-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ .birthday__img {
+      display: block;
+      margin: 30 auto;
+      width: 80%;
+      max-width: 600px; 
+      box-shadow: 0 0 60px palevioletred;
+    }
+.eventDescription__container{
   width: 80%;
-  height: 400px;
-  margin-top: 20px;
+}
+
+.homePageTitle {
+  font-size: 4rem;
+  text-align: center;
+}
+
+button {
+  border-color: black;
+  background-color: pink;
+  padding: 10px 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  font-family: "Kings", cursive;
+}
+
+button .line-up {
+    padding: 5px 5px;
+    font-size: 1.5rem;
+}
+
+.button-container {
+  position: relative;
+  display: inline-block;
+}
+
+#signupForm {
+  display: flex;
+  justify-content: start;
+  height: 70px;
+}
+
+.star {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle 1s ease-out forwards;
+}
+
+  .spinning-car {
+    width: 200px; /* Adjust size */
+    animation: spin 3s linear infinite;
+  }
+
+  .home-arrow {
+    font-size: 30px; /* Bigger for visibility */
+    text-decoration: none;
+    color: black; /* Change if needed */
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1000; /* Ensures it's on top */
+}
+
+  #nameInput{
+    width: 500px;
+    height: 100%;
+    margin-right: 20px;
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+
+  .home-description{
+    width: 70%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+@keyframes twinkle {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .mb-2 {
+    margin-bottom: 20px;
+  }
+  
+  body {
+    padding-top: 20px;
+    padding: 30px;
+    justify-content: flex-start; /* Aligns content at the top */
+    height: auto; /* Removes forced full-height */
+  }
+  .homePageTitle {
+    font-size: 3rem;
+  }
+  .birthday__img {
+    width: 100%;
+  }
+  .home-description{
+    width: 100%;
+    font-size: 1rem;
+  }
+.eventDescription__container{
+  width: 100%;
+}
 }

@@ -1,35 +1,105 @@
 <head>
-  <link rel="stylesheet" href="..//event__styles.css" />
+  <link rel="stylesheet" href="..//styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kings&family=Luxurious+Script&display=swap"
+    rel="stylesheet"
+  />
 </head>
-<div class="event-container">
-  <h3>Event 1:</h3>
-  <h1>Kimberley’s Birthday</h1>
-  <h3>27/04/25</h3>
-  <picture>
-    <source srcset="../images/birthday-large.jpg" media="(min-width: 1024px)" />
-    <source srcset="../images/birthday-medium.jpg" media="(min-width: 768px)" />
-    <source srcset="../images/birthday-small.jpg" media="(max-width: 767px)" />
-    <img
-      src="../images/birthday-fallback.jpg"
-      alt="Kimberley's Birthday Event"
-    />
-  </picture>
-  <p id="description">
-    An afternoon of the cute people in my life reading there cute words out
-    loud. 28 is going to be my softest year yet and I’ve invited you because I
-    feel like this is your sort of thing. You don’t have to read anything, you
-    can just come and listen. If you'd like to read something (poem/letter/short
-    story), an extract or poem you love, or just some lyrics you like then plz
-    write your name on the line up below.
-  </p>
-  <p id="location">Location: my house</p>
-  <ul id="rules">
-    <li>We’ll pull names out of a hat to decide the order</li>
-    <li>
-      Three pieces per person cap (if there’s more you desperately want to read
-      we can be soft)
-    </li>
-    <li>Sober space but plz bring your nosecco and 0% beer by the gallon.</li>
-  </ul>
-  <p id="time">16:00 - 20:00</p>
+<body>
+  
+  <div class="event-container">
+    <div class="eventDescription__container">
+      <a href="..//index.html" class="home-arrow">
+  &#8592;
+</a>
+      <h3>Event:</h3>
+      <h1>Kimberley’s 28th Birthday</h1>
+      <img
+        src="../mirror.jpg"
+        alt="Kimberley's Birthday Event"
+        class="birthday__img"
+      />
+<div class="event-details">
+  <p id="info">16:00-20:00, Sunday 27th of April, My House</p>
 </div>
+<hr />
+      <p id="description" class="mb-2">
+        An afternoon with cute people in my life, reading their beautiful
+        words out loud. 28 is going to be my softest year yet. You don’t have to
+        read anything—just come, listen, and soak in the words. But if you’d
+        like to share something—a poem, a letter, a short story, a text, or
+        even lyrics you love—please add your name to the lineup below. As much as you can fit into 10 minutes (or less).
+      </p>
+
+    <form id="signupForm" class="mb-2">
+      <input
+        type="text"
+        id="nameInput"
+        placeholder="Enter your name"
+        required
+      />
+      <button class= "line-up" id="submit">Join the lineup</button>
+    </form>
+
+    <h1>Lineup:</h1>
+    <ul id="lineupList"></ul>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("signupForm");
+        const nameInput = document.getElementById("nameInput");
+        const lineupList = document.getElementById("lineupList");
+
+        // Assign a unique user ID if they don’t have one
+        let userId = localStorage.getItem("userId");
+        if (!userId) {
+          userId =
+            Date.now().toString() + Math.random().toString(36).substring(2);
+          localStorage.setItem("userId", userId);
+        }
+
+        // Load saved names from localStorage
+        let savedEntries = JSON.parse(localStorage.getItem("lineup")) || [];
+        savedEntries.forEach(({ name, id }) => addNameToList(name, id));
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const name = nameInput.value.trim();
+
+          if (name && !savedEntries.some((entry) => entry.name === name)) {
+            const newEntry = { name, id: userId };
+            savedEntries.push(newEntry);
+            localStorage.setItem("lineup", JSON.stringify(savedEntries));
+            addNameToList(name, userId);
+            nameInput.value = "";
+          }
+        });
+
+        function addNameToList(name, id) {
+          const li = document.createElement("li");
+          li.textContent = name;
+
+          // Only show the remove button if the user added this name
+          if (id === userId) {
+            const removeBtn = document.createElement("button");
+            removeBtn.textContent = "x";
+            removeBtn.style.marginLeft = "10px";
+            removeBtn.style.cursor = "pointer";
+            removeBtn.onclick = function () {
+              lineupList.removeChild(li);
+              savedEntries = savedEntries.filter(
+                (entry) => entry.name !== name
+              );
+              localStorage.setItem("lineup", JSON.stringify(savedEntries));
+            };
+            li.appendChild(removeBtn);
+          }
+
+          lineupList.appendChild(li);
+        }
+      });
+    </script>
+  </div>
+</body>
