@@ -1,0 +1,10 @@
+/* home page */
+body {
+    background-color: lightpink;
+    padding: 80px;
+}
+
+/* event containers */
+#eventContainer iframe{
+    width: 100%;
+}
