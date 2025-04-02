@@ -24,12 +24,14 @@ body {
 
 h1 {
       font-family: "Kings", cursive;
+      font-size: 4rem;
 }
 h2, h1 {
     margin: 0px;
 }
 h3 {
   margin: 5px;
+  font-size: 3rem;
 }
 
 hr {
@@ -51,7 +53,7 @@ hr {
 }
 
 .event-container {
-  width: 850px;
+  width: 750px;
 }
 
  .birthday__img {
@@ -165,6 +167,12 @@ button {
 }
 
 @media (max-width: 700px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
   .mb-2 {
     margin-bottom: 20px;
   }
@@ -189,4 +197,7 @@ button {
 #description {
   font-size: 2rem;
   }
+   .birthday__img {
+      max-width: none; 
+    }
 }
