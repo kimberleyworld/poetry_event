@@ -68,7 +68,7 @@
 
         form.addEventListener("submit", function (event) {
           event.preventDefault();
-          const name = nameInput.value.trim();
+    const name = sanitizeInput(nameInput.value.trim());
 
           if (name && !savedEntries.some((entry) => entry.name === name)) {
             const newEntry = { name, id: userId };
@@ -101,6 +101,12 @@
 
           lineupList.appendChild(li);
         }
+          // Function to sanitize input
+  function sanitizeInput(input) {
+    const tempDiv = document.createElement("div");
+    tempDiv.textContent = input; // Escapes any HTML or script tags
+    return tempDiv.innerHTML.trim();
+  }
       });
     </script>
         <script src="..//trails.js"></script>
