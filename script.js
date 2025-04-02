@@ -1,9 +1,6 @@
 // function to handlethe twinkling effect 
 document.getElementById("twinkleButton").addEventListener("click", function (e) {
-   if (window.innerWidth <= 700) {
-    return; // Do nothing on mobile devices
-  }
-  
+ 
   e.preventDefault(); // Prevent immediate navigation
 
   const button = e.target;

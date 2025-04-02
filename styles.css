@@ -129,8 +129,8 @@ button {
 
   .home-description{
     width: 70%;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 1.5rem;
   }
 
@@ -190,7 +190,7 @@ button {
    .birthday__img {
       max-width: none; 
     }
-  .star {
-    display: none; 
-  }
+    .eventDescription__container {
+      margin-top: 40px;
+    }
 }
