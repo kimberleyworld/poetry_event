@@ -23,11 +23,12 @@ body {
 }
 
 h1 {
-      font-family: "Kings", cursive;
       font-size: 4rem;
 }
 h2, h1 {
     margin: 0px;
+      font-family: "Kings", cursive;
+
 }
 h3 {
   margin: 5px;
@@ -93,11 +94,6 @@ button {
   display: inline-block;
 }
 
-#signupForm {
-  display: flex;
-  justify-content: start;
-  height: 40px;
-}
 
 .star {
   position: absolute;
@@ -167,12 +163,6 @@ button {
 }
 
 @media (max-width: 700px) {
-  h1 {
-    font-size: 3rem;
-  }
-  h3 {
-    font-size: 2rem;
-  }
   .mb-2 {
     margin-bottom: 20px;
   }
@@ -189,7 +179,7 @@ button {
   }
   .home-description{
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
   .event-container {
   width: 600px;
@@ -200,4 +190,7 @@ button {
    .birthday__img {
       max-width: none; 
     }
+  .star {
+    display: none; 
+  }
 }
