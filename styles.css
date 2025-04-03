@@ -200,7 +200,7 @@ button {
     overflow: auto;
   }
   .home{
-    padding: 50px;
+    padding: 20px;
   }
 
   .homePageTitle {
@@ -224,7 +224,7 @@ button {
   .home-description, .astrix {
     width: 100%;
     font-size: 1.1rem;
-    text-align: left;
+    text-align: center;
   }
 
   #description {
