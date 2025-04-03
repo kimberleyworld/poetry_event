@@ -1,7 +1,7 @@
 let trails = [];
 
 function setup() {
-  const canvas = createCanvas(windowWidth, document.body.scrollHeight);
+  const canvas = createCanvas(windowWidth, windowHeight);
   canvas.style("position", "absolute"); // Position the canvas absolutely
   canvas.style("top", "0");
   canvas.style("left", "0");

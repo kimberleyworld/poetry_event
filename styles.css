@@ -13,15 +13,16 @@ body {
   align-items: center; /* Center horizontally */
   height: 100vh; /* Full screen height */
   background-color: cornflowerblue;
-  padding: 50px;
+  padding: 10px;
+  padding-top: 0px;
+  margin-top: 0px;
   color: white;
-  overflow-x: hidden;
+  overflow: hidden;
   }
 
  .home {
   justify-content: center; /* Center vertically */
     padding: 0px;
-  overflow: hidden;
 
 }
 
@@ -39,7 +40,7 @@ h3 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 hr {
@@ -53,8 +54,8 @@ hr {
 #info {
   font-family: "Kings", cursive;
   font-weight: bold;
-  font-size: 2rem;
   margin-bottom: 10px;
+  margin-top: 0px;
   }
 
 .event-container ,.info-container{
@@ -69,10 +70,9 @@ hr {
 
  .birthday__img {
       display: block;
-      margin: 30 auto;
-      width: 100%;
-      max-width: 600px; 
+      height: 495px;
       box-shadow: 0 0 80px palevioletred;
+      margin-right: 30px;
     }
 
 .homePageTitle {
@@ -125,16 +125,34 @@ button {
     font-size: 1rem;
   }
 
-    #description {
-      font-size: 1.5rem;
-      margin-top: 10px;
-  }
-
   .astrix{
     font-size: 1rem;
     margin-top: 5px;
     margin-bottom: 0px;
     width: 60%;
+  }
+      #description {
+      font-size: 1.4rem;
+      margin-top: 10px;
+  }
+
+  .desktop-birthday{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+      padding: 10px;
+  border: 1px solid white;
+  align-items: center;
+  height: 500px;
+  }
+
+  .birthday__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    margin-top: 20px;
   }
 
   @keyframes spin {
@@ -162,19 +180,24 @@ button {
 }
 
 @media (max-width: 700px) {
-  h2{
+  h1{
     font-size: 2rem;
   }
+  h2{
+    font-size: 1.5rem;
+  }
   #info {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .mb-2 {
     margin-bottom: 20px;
   }
 
   body {
-    padding: 20px 30px;
-    height: auto; /* Removes forced full-height */
+    height: auto;
+    margin: 0px;
+    padding: 20px;
+    overflow: auto;
   }
   .home{
     padding: 50px;
@@ -187,6 +210,15 @@ button {
   .birthday__img {
     width: 100%;
     max-width: 100% !important; /* Ensures full responsiveness */
+    height: auto; 
+  }
+
+  .desktop-birthday {
+    flex-direction: column; /* Stack items vertically */
+    height: auto; /* Removes fixed height */
+    padding: 0px;
+    margin-top: 0px;
+    border: none;
   }
 
   .home-description, .astrix {
@@ -196,15 +228,13 @@ button {
   }
 
   #description {
-    font-size: 1.5rem;
-    text-align: left
-    ;
+    font-size: 1.4rem;
+    text-align: left;
   }
 
   .event-container {
     width: 100% !important; /* Ensures it takes full width */
     max-width: 100%;
-    padding: 10px;
   }
 
   .eventDescription__container {
