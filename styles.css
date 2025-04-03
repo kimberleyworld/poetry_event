@@ -27,11 +27,15 @@ h1 {
 }
 h2, h1 {
     margin: 0px;
-      font-family: "Kings", cursive;
+    font-family: "Kings", cursive;
 
 }
 h3 {
   margin: 5px;
+  font-size: 2rem;
+}
+
+h2 {
   font-size: 3rem;
 }
 
@@ -46,7 +50,8 @@ hr {
 #info {
   font-family: "Kings", cursive;
   font-weight: bold;
-}
+  font-size: 2rem;
+  }
 .event-container ,.info-container{
   display: flex;
   flex-direction: column;
@@ -54,14 +59,14 @@ hr {
 }
 
 .event-container {
-  width: 750px;
+  width: 800px;
 }
 
  .birthday__img {
       display: block;
       margin: 30 auto;
-      width: 80%;
-      max-width: 600px; 
+      width: 100%;
+      max-width: 800px; 
       box-shadow: 0 0 80px palevioletred;
     }
 
@@ -134,8 +139,8 @@ button {
     font-size: 1.5rem;
   }
 
-  #description {
-    font-size: 2rem;
+    #description {
+  font-size: 2rem;
   }
 
   @keyframes spin {
@@ -166,31 +171,41 @@ button {
   .mb-2 {
     margin-bottom: 20px;
   }
+
   body {
-    padding-top: 20px;
-    padding: 30px;
+    padding: 20px 30px;
     height: auto; /* Removes forced full-height */
   }
+
   .homePageTitle {
     font-size: 3rem;
+    text-align: center;
   }
+
   .birthday__img {
     width: 100%;
+    max-width: 100% !important; /* Ensures full responsiveness */
   }
-  .home-description{
+
+  .home-description {
     width: 100%;
     font-size: 1.1rem;
+    text-align: center;
   }
+
+  #description {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
   .event-container {
-  width: 600px;
-}
-#description {
-  font-size: 2rem;
+    width: 100% !important; /* Ensures it takes full width */
+    max-width: 100%;
+    padding: 10px;
   }
-   .birthday__img {
-      max-width: none; 
-    }
-    .eventDescription__container {
-      margin-top: 40px;
-    }
+
+  .eventDescription__container {
+    margin-top: 40px;
+    text-align: center;
+  }
 }

@@ -24,7 +24,3 @@ function heart(x, y, size) {
   bezierVertex(x + size, y + size / 3, x + size / 2, y - size / 2, x, y);
   endShape(CLOSE);
 }
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
