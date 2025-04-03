@@ -201,6 +201,7 @@ button {
   .home{
     padding: 30px;
     overflow-x: hidden;
+    justify-content: flex-start;
   }
 
   .homePageTitle {
