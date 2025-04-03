@@ -5,7 +5,7 @@ function setup() {
   canvas.style("position", "absolute"); // Position the canvas absolutely
   canvas.style("top", "0");
   canvas.style("left", "0");
-  canvas.style("z-index", "-100"); // Send the canvas behind other elements
+  canvas.style("z-index", "-100"); 
   canvas.style("pointer-events", "none"); // Allow clicks to pass through the canvas
   noCursor();
   noFill();
